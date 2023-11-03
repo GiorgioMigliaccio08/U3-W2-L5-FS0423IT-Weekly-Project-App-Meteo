@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const GenerateLocation = () => {
   const [city, setCity] = useState("");
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   const API_KEY = "1e1b9541655972027e1f6de4ef4948c2";
 
@@ -12,23 +13,22 @@ const GenerateLocation = () => {
 
     try {
       const response = await fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=london&appid=" +
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          city +
+          "&appid=" +
           API_KEY
       );
+
       const data = await response.json();
-      setWeatherData(data);
+      setWeatherData(data[0]);
+      console.log(data);
       setLoading(false);
+      setVisible(true);
     } catch (error) {
       console.error("Errore durante il recupero dei dati meteo:", error);
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    if (city) {
-      fetchWeatherData();
-    }
-  }, [city]);
 
   return (
     <div>
@@ -46,11 +46,11 @@ const GenerateLocation = () => {
 
       {loading && <p>Caricamento...</p>}
 
-      {weatherData && (
+      {visible && (
         <div>
           <h2>{weatherData.name}</h2>
           <p>Temperatura: {weatherData.main.temp} °C</p>
-          <p>Condizioni meteo: {weatherData.weather[0].description}</p>
+          <p>Condizioni meteo: {weatherData.weather.description}</p>
         </div>
       )}
     </div>
