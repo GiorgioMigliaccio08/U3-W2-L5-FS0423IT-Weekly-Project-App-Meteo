@@ -47,7 +47,7 @@
 
 .sfondo {
   height: 850px;
-  background-image: url(./asset/DUE.jpg);
+  background-image: url(./asset/sfondo.jpg);
   background-size: cover;
   margin-right: 0;
 }
@@ -58,4 +58,23 @@
   background-color: #1f92bf;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.Inserimento {
+  padding-top: 120px;
+  font-weight: 300;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.input {
+  width: 350px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.botton {
+  margin-left: 20px;
+
+  border-radius: 50px;
+  padding: 10px;
 }
