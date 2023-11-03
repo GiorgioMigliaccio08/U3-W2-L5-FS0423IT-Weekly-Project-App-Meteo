@@ -7,7 +7,7 @@ import logo from "../asset/image.jpg";
 
 function NavBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" className="Nav">
       <Navbar.Brand href="#home">
         <Image src={logo} alt="Logo Meteo" fluid className="NavBar-logo" />
         App Meteo

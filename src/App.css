@@ -44,3 +44,18 @@
   margin-right: 20px;
   margin-left: 20px;
 }
+
+.sfondo {
+  height: 850px;
+  background-image: url(./asset/DUE.jpg);
+  background-size: cover;
+  margin-right: 0;
+}
+.Nav {
+  background-color: #1f92bf;
+}
+.footer {
+  background-color: #1f92bf;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
