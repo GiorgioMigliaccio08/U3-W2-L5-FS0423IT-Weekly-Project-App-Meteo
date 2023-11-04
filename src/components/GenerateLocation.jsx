@@ -12,6 +12,16 @@ const GenerateLocation = () => {
     return (kelvin - 273.15).toFixed(2);
   };
 
+  const getBackgroundColor = (temperature) => {
+    if (temperature >= 30) {
+      return "red"; // Colore rosso per temperature alte
+    } else if (temperature >= 20) {
+      return "orange"; // Colore arancione per temperature medie
+    } else {
+      return "blue"; // Colore blu per temperature basse
+    }
+  };
+
   const fetchWeatherData = async () => {
     setLoading(true);
 
@@ -51,7 +61,14 @@ const GenerateLocation = () => {
       {loading && <p>Caricamento...</p>}
 
       {visible && (
-        <div className="card">
+        <div
+          className="card"
+          style={{
+            backgroundColor: getBackgroundColor(
+              kelvinToCelsius(weatherData.main.temp)
+            ),
+          }}
+        >
           <h2>{weatherData.name}</h2>
 
           <p>Temperatura: {kelvinToCelsius(weatherData.main.temp)} °C</p>
