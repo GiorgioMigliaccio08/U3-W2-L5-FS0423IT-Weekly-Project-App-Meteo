@@ -20,7 +20,7 @@ const GenerateLocation = () => {
       );
 
       const data = await response.json();
-      setWeatherData(data[0]);
+      setWeatherData(data);
       console.log(data);
       setLoading(false);
       setVisible(true);
@@ -47,10 +47,12 @@ const GenerateLocation = () => {
       {loading && <p>Caricamento...</p>}
 
       {visible && (
-        <div>
+        <div className="card">
           <h2>{weatherData.name}</h2>
+
           <p>Temperatura: {weatherData.main.temp} °C</p>
-          <p>Condizioni meteo: {weatherData.weather.description}</p>
+          <p>Humidity : {weatherData.main.humidity} %</p>
+          <p>Pressure : {weatherData.main.pressure} %</p>
         </div>
       )}
     </div>
