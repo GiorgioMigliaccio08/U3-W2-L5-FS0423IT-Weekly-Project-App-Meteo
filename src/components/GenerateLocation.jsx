@@ -51,8 +51,11 @@ const GenerateLocation = () => {
           <h2>{weatherData.name}</h2>
 
           <p>Temperatura: {weatherData.main.temp} °C</p>
+          <p>Temperatura Max: {weatherData.main.temp_max} °C</p>
+          <p>Temperatura Min: {weatherData.main.temp_min} °C</p>
           <p>Humidity : {weatherData.main.humidity} %</p>
-          <p>Pressure : {weatherData.main.pressure} %</p>
+          <p>Pressure : {weatherData.main.pressure} hPa</p>
+          <p>Velocità vento: {weatherData.wind.speed} km/h</p>
         </div>
       )}
     </div>
