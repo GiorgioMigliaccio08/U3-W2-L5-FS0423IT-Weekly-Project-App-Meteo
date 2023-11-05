@@ -70,18 +70,25 @@ const GenerateLocation = () => {
             backgroundSize: "cover",
           }}
         >
-          <h2>{weatherData.name}</h2>
-
-          <p>Temperatura: {kelvinToCelsius(weatherData.main.temp)} °C</p>
-          <p>
+          <h1 style={{ color: "black" }}>{weatherData.name}</h1>
+          <h3 style={{ color: "red" }}>
+            Temperatura: {kelvinToCelsius(weatherData.main.temp)} °C
+          </h3>
+          <h3 style={{ color: "red" }}>
             Temperatura Max: {kelvinToCelsius(weatherData.main.temp_max)} °C
-          </p>
-          <p>
+          </h3>
+          <h3 style={{ color: "red" }}>
             Temperatura Min: {kelvinToCelsius(weatherData.main.temp_min)} °C
-          </p>
-          <p>Humidity : {weatherData.main.humidity} %</p>
-          <p>Pressure : {weatherData.main.pressure} hPa</p>
-          <p>Velocità vento: {weatherData.wind.speed} km/h</p>
+          </h3>
+          <h3 style={{ color: "red" }}>
+            Humidity : {weatherData.main.humidity} %
+          </h3>
+          <h3 style={{ color: "red" }}>
+            Pressure : {weatherData.main.pressure} hPa
+          </h3>
+          <h3 style={{ color: "red" }}>
+            Velocità vento: {weatherData.wind.speed} km/h
+          </h3>
         </div>
       )}
     </div>

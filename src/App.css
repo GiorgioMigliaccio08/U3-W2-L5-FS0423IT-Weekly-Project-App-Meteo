@@ -86,7 +86,11 @@
     margin-left: 60px;
     margin-right: 60px;
     margin-bottom: 20px;
-    padding: 150px;
+    padding: 100px;
     border-radius: 5px;
   }
+}
+
+.text-white {
+  color: white;
 }
