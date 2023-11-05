@@ -13,12 +13,12 @@ const GenerateLocation = () => {
   };
 
   const getBackgroundColor = (temperature) => {
-    if (temperature >= 30) {
-      return "red"; // Colore rosso per temperature alte
-    } else if (temperature >= 20) {
-      return "orange"; // Colore arancione per temperature medie
+    if (temperature >= 25) {
+      return "url('https://www.ofcs.it/wp-content/uploads/2023/07/httpsaccademiadellestelle.orgsolstizio-destate.jpeg')"; // Immagine di sfondo per temperature alte
+    } else if (temperature >= 17) {
+      return "url('https://www.piacenzasera.it/photogallery_new/images/2018/08/sole-meteo-134771.660x368.jpg')"; // Immagine di sfondo per temperature medie
     } else {
-      return "blue"; // Colore blu per temperature basse
+      return "url('https://www.blogsicilia.it/wp-content/uploads/sites/2/2022/09/meteo-pioggia.jpg')"; // Immagine di sfondo per temperature basse
     }
   };
 
@@ -64,9 +64,10 @@ const GenerateLocation = () => {
         <div
           className="card"
           style={{
-            backgroundColor: getBackgroundColor(
+            backgroundImage: getBackgroundColor(
               kelvinToCelsius(weatherData.main.temp)
             ),
+            backgroundSize: "cover",
           }}
         >
           <h2>{weatherData.name}</h2>
